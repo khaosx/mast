@@ -1,0 +1,44 @@
+mas_installed_apps:
+  - { id: 904280696, name: "Things" }
+  - { id: 1333542190, name: "1Password 7" }
+  - { id: 407963104, name: "Pixelmator" }
+  - { id: 1114970564, name: "Stockfolio" }
+  - { id: 1529448980, name: "Reeder" }
+  - { id: 1439967473, name: "Okta Extension App" }
+  - { id: 441258766, name: "Magnet" }
+  - { id: 1330266650, name: "HomePass" }
+  - { id: 1303222628, name: "Paprika Recipe Manager 3" }
+  - { id: 510620098, name: "MediaInfo" }
+  - { id: 1295203466, name: "Microsoft Remote Desktop" }
+  - { id: 823766827, name: "OneDrive" }
+  - { id: 409201541, name: "Pages" }
+  - { id: 603637384, name: "Name Mangler" }
+  - { id: 1160435653, name: "AutoMounter" }
+  - { id: 470158793, name: "Keka" }
+  - { id: 1056077392, name: "DxO OpticsPro for Photos" }
+  - { id: 408981434, name: "iMovie" }
+  - { id: 409203825, name: "Numbers" }
+  - { id: 409183694, name: "Keynote" }
+  - { id: 413969927, name: "AudioBookBinder" }
+
+brew_cask_packages:
+  - appzapper
+  - balenaetcher
+  - bbedit
+  - blueharvest
+  - downie
+  - drivedx
+  - dropbox
+  - filebot
+  - hazel
+  - java
+  - launchcontrol
+  - musicbrainz-picard
+  - neofinder
+  - plex
+  - powershell
+  - slack
+  - subtools
+  - transmit
+  - virtualbox
+  - vlc
