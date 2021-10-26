@@ -1,0 +1,9 @@
+# Grant admin users sudo rights with no password requirement
+# Applied by copying a template file into /private/etc/sudoers.d/custom
+
+- name: Apply sudoers template
+  ansible.builtin.template:
+    src: admin_sudo_nopasswd.j2
+    dest: /private/etc/sudoers.d/custom
+    mode: 0440
+    validate: 'visudo -cf %s'

@@ -1,3 +1,63 @@
+---
+
+# System Config
+allow_admin_nopasswd_sudo: true
+dotfiles_repo: https://github.com/khaosx/dotfiles.git
+
+systemsetup_setremotelogin: on
+systemsetup_settimezone: "America/New_York"
+systemsetup_setusingnetworktime: on
+systemsetup_setnetworktimeserver: palladium.khaosx.net
+systemsetup_setcomputersleep: 60 # minutes - 0 is off
+systemsetup_setdisplaysleep: 60 # minutes - 0 is off
+systemsetup_setharddisksleep: 60 # minutes - 0 is off
+systemsetup_setrestartpowerfailure: on
+systemsetup_setrestartfreeze: on
+systemsetup_setallowpowerbuttontosleepcomputer: on
+systemsetup_setcomputername: {{ ansible_hostname|capitalize }}
+systemsetup_setlocalsubnetname: {{ ansible_hostname|lower }}
+systemsetup_getwaitforstartupafterpowerfailure: 30 # seconds
+systemsetup_setwaitforstartupafterpowerfailure : 30 # value must be a multiple of 30 seconds.
+
+install_homebrew_packages: true
+homebrew_packages:
+  - ansible-lint
+  - dockutil
+  - ffmpeg
+  - flac
+  - git
+  - jq
+  - lame
+  - mas
+  - mkvtoolnix
+  - mpv
+  - wget
+  - youtube-dl
+
+install_homebrew_casks: true
+homebrew_cask_packages:
+  - appzapper
+  - balenaetcher
+  - bbedit
+  - blueharvest
+  - downie
+  - drivedx
+  - dropbox
+  - filebot
+  - hazel
+  - java
+  - launchcontrol
+  - musicbrainz-picard
+  - neofinder
+  - plex
+  - powershell
+  - slack
+  - subtools
+  - transmit
+  - virtualbox
+  - vlc
+
+install_mas_apps: true
 mas_installed_apps:
   - { id: 904280696, name: "Things" }
   - { id: 1333542190, name: "1Password 7" }
@@ -21,24 +81,3 @@ mas_installed_apps:
   - { id: 409183694, name: "Keynote" }
   - { id: 413969927, name: "AudioBookBinder" }
 
-brew_cask_packages:
-  - appzapper
-  - balenaetcher
-  - bbedit
-  - blueharvest
-  - downie
-  - drivedx
-  - dropbox
-  - filebot
-  - hazel
-  - java
-  - launchcontrol
-  - musicbrainz-picard
-  - neofinder
-  - plex
-  - powershell
-  - slack
-  - subtools
-  - transmit
-  - virtualbox
-  - vlc

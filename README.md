@@ -1,17 +1,18 @@
-# MAST (MacOS Ansible Setup Assistant)
+# MAST (MacOS Ansible Setup Tool)
 
-This repo grew out of my (now-deprecated) script for a mostly-automated setup of MacOS, to include system configuration, application install, and environment configuration. The initial script was written in BASH and was remarkably stupid. Fast forward to now, and we have much more effective and intuitive configuration management tools, such as Ansible, which will provide the majority of the "heavy lifting" for the new system.
+This repo grew out of my [(now-deprecated) script](https://github.com/khaosx/macos-setup-deprecated) for a mostly-automated setup of MacOS, to include system configuration, application install, and environment configuration. The initial script was written in BASH and was remarkably stupid in its simplicity. Fast forward to now, and there are much more effective and intuitive configuration management tools, such as Ansible, which will provide the majority of the heavy lifting for configuration of the new system.
 
-Tested on MacOS Mojave (10.14)
+My usage of this script assumes that I'll be running this as a standalone installer for my primary workstation which acts as command and control for my devops environment. Elements of this are utilized as a role in my monolithic infrastructure role to setup other Macs in my environment that require customization.
+
+Tested on MacOS Big Sur (11.6) and Monterey (12.1)
 
 ## Prerequisites
 
 * A Mac
-* with an OS
-* Also, you should sign into the Mac App Store if you didn't do the iCloud setup, or all mas installs will fail.
+* MacOS Big Sur (11.6) or higher
 
-## Installation
-
+## Installation (How does it, um, how does it work?)
+1. 
 Seriously, log into the App Store before you run this. You have been warned.
 
 To install with a one-liner, run this:
@@ -34,6 +35,8 @@ There's a few things to do once the install is complete. I'll document them one 
 ## Resources and Inspiration
 * https://github.com/joshukraine/mac-bootstrap
 * https://github.com/geerlingguy/mac-dev-playbook
+* https://www.freecodecamp.org/news/install-xcode-command-line-tools/
+* System setup commands - https://support.apple.com/guide/remote-desktop/about-systemsetup-apd95406b8d/mac
 
 ## License
 
