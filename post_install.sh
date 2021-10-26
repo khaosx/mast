@@ -32,7 +32,7 @@ printf "*******                 MacOS Ansible Setup Tool                  ******
 printf "*******                                                           *******\\n"
 printf "*************************************************************************\\n\\n"
 
-printf " - Checking for homebrew installation...\\n"
+printf "Checking for homebrew installation...\\n"
 which -s brew  >/dev/null 2>&1
 if [[ $? != 0 ]] ; then
     export HOMEBREW_INSTALLED="false"
@@ -40,7 +40,7 @@ else
     export HOMEBREW_INSTALLED="true"
 fi
 
-printf " - Checking CPU architecture...\\n"
+printf "Checking CPU architecture...\\n"
 if [[ $(uname -p) == 'arm' ]]; then
   export APPLE_SILICON="true"
 fi
