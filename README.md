@@ -8,8 +8,8 @@ Tested on macOS Big Sur (11.6) and Monterey (12.1)
 
 ## Prerequisites
 
-* A Mac
-* macOS Big Sur (11.6) or higher
+* A Mac (either Intel- or Apple M1-based)
+* macOS Big Sur (11.6) or higher, freshly installed.
 
 ## Installation (How does it, um, how does it work?)
 1. Seriously, log into the App Store before you run this. You have been warned.
