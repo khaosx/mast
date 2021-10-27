@@ -3,14 +3,14 @@
 ################################################################################
 # post-install.sh
 #
-# Script to be run after MacOS install to set up a baseline install with ansible, python, pip, brew, and 
+# Script to be run after macOS install to set up a baseline install with ansible, python, pip, brew, and 
 # mas. The script will automatically call an ansible playbook to configure the rest of the system, to 
 # include settings and apps.
 ################################################################################
 
 # Make sure we're on a Mac before continuing
 if [ $(uname) != "Darwin" ]; then
-  printf "Oops, it looks like you're using a non-MacOS system. This script only supports MacOS. Exiting..."
+  printf "Oops, it looks like you're using a non-macOS system. This script only supports macOS. Exiting..."
   exit 1
 fi
 
@@ -28,7 +28,7 @@ export DEFAULT_TIME_ZONE="America/New_York"
 clear
 printf "*************************************************************************\\n"
 printf "*******                                                           *******\\n"
-printf "*******                 MacOS Ansible Setup Tool                  *******\\n"
+printf "*******                 macOS Ansible Setup Tool                  *******\\n"
 printf "*******                                                           *******\\n"
 printf "*************************************************************************\\n\\n"
 
@@ -83,22 +83,22 @@ fi
 
 printf "Applying basic system info\\n"
 
-printf "  - Setting system label and name\\n"
+printf "Setting system label and name\\n"
 sudo scutil --set ComputerName $COMPUTER_NAME
 sudo scutil --set HostName $HOST_NAME
 sudo scutil --set LocalHostName $HOST_NAME
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $HOST_NAME
 
-printf "  - Setting system time zone and network time sync\\n"
+printf "Setting system time zone and network time sync\\n"
 sudo /usr/sbin/systemsetup -settimezone "$TIME_ZONE"  >/dev/null 2>&1
 sudo /usr/sbin/systemsetup -setusingnetworktime on  >/dev/null 2>&1
 
 if [[ $HOMEBREW_INSTALLED = "false" ]] ; then
-  printf " - Installing HomeBrew - Follow the prompts!\\n"
+  printf "Installing HomeBrew - Follow the prompts!\\n"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-printf "  - Setting up HomeBrew environment\\n"
+printf "Setting up HomeBrew environment\\n"
 # Adds homebrew environment to $path via ~/.zprofile
 if [[ $APPLE_SILICON = "true" ]] ; then
   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
@@ -106,6 +106,12 @@ if [[ $APPLE_SILICON = "true" ]] ; then
 fi
 brew analytics off
 brew doctor
+
+printf "Installing Python 3\\n"
+brew install python3
+
+printf "Installing Ansible\\n"
+pip3 install ansible
 
 printf "Cloning github repo\\n"
 git clone "$BOOTSTRAP_REPO_URL" "$BOOTSTRAP_DIR"
@@ -182,7 +188,7 @@ printf "Step 7: Cleaning up...\\n"
 printf  "**********************************************************************\\n"
 printf  "**********************************************************************\\n"
 printf  "****                                                              ****\\n"
-printf  "****            MacOS post-install script complete!               ****\\n"
+printf  "****            macOS post-install script complete!               ****\\n"
 printf  "****                Please restart your computer.                 ****\\n"
 printf  "****                                                              ****\\n"
 printf  "**********************************************************************\\n"
