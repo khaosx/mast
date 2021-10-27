@@ -1,19 +1,18 @@
-# MAST (MacOS Ansible Setup Tool)
+# MAST (macOS Ansible Setup Tool)
 
-This repo grew out of my [(now-deprecated) script](https://github.com/khaosx/macos-setup-deprecated) for a mostly-automated setup of MacOS, to include system configuration, application install, and environment configuration. The initial script was written in BASH and was remarkably stupid in its simplicity. Fast forward to now, and there are much more effective and intuitive configuration management tools, such as Ansible, which will provide the majority of the heavy lifting for configuration of the new system.
+This repo grew out of my [(now-deprecated) script](https://github.com/khaosx/macos-setup-deprecated) for a mostly-automated setup of macOS, to include system configuration, application install, and environment configuration. The initial script was written in BASH and was remarkably stupid in its simplicity. Fast forward to now, and there are much more effective and intuitive configuration management tools, such as Ansible, which will provide the majority of the heavy lifting for configuration of the new system.
 
 My usage of this script assumes that I'll be running this as a standalone installer for my primary workstation which acts as command and control for my devops environment. Elements of this are utilized as a role in my monolithic infrastructure role to setup other Macs in my environment that require customization.
 
-Tested on MacOS Big Sur (11.6) and Monterey (12.1)
+Tested on macOS Big Sur (11.6) and Monterey (12.1)
 
 ## Prerequisites
 
 * A Mac
-* MacOS Big Sur (11.6) or higher
+* macOS Big Sur (11.6) or higher
 
 ## Installation (How does it, um, how does it work?)
-1. 
-Seriously, log into the App Store before you run this. You have been warned.
+1. Seriously, log into the App Store before you run this. You have been warned.
 
 To install with a one-liner, run this:
 
