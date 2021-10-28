@@ -2,8 +2,8 @@
 
 - name: Clone dotfiles repo from Git
   ansible.builtin.git:
-    repo: "{{  dotfiles_repo }}"
-    dest: "{{  dotfiles_destination }}"
+    repo: "{{ dotfiles_repo }}"
+    dest: "{{ dotfiles_destination }}"
 
 - name: "Remove existing .zprofile"
   ansible.builtin.file:
