@@ -1,6 +1,5 @@
 ---
 - hosts: all
-  become: true
 
   vars_files:
     - vars.yml
@@ -15,6 +14,7 @@
     
     - import_tasks: tasks/modify_sudoers.yml
       when: allow_admin_nopasswd_sudo
+      become: true
 
     - import_tasks: tasks/configure_dotfiles.yml
       when: configure_dotfiles_from_repo 
