@@ -13,7 +13,7 @@ Tested on macOS Big Sur (11.6) and Monterey (12.1)
 
 ## Installation (How does it, um, how does it work?)
 1. Install macOS, keeping your install as close to vanilla as possible. Remember, you want to manage your config via Ansible, and waste as little time as possible doing manual configurations.
-1. Modify the Seriously, log into the App Store before you run this. You have been warned.
+1. Log into the App Store before you run this, if you set `install_mas_apps` to TRUE.
 1. In the file `post_install.sh`, modify the three lines for environment variables
     * `export BOOTSTRAP_REPO_URL...`
     * `export DEFAULT_COMPUTER_NAME...`
