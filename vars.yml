@@ -3,6 +3,10 @@
 # sudo configuration
 allow_admin_nopasswd_sudo: true
 
+dev_env_needs:
+  - github
+  - ansible
+
 # Dotfiles configuration
 dotfiles_repo: https://github.com/khaosx/dotfiles.git
 dotfiles_destination: ~/development/github/dotfiles
