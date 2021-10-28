@@ -12,13 +12,13 @@ Tested on macOS Big Sur (11.6) and Monterey (12.1)
 * macOS Big Sur (11.6) or higher, freshly installed.
 
 ## Installation (How does it, um, how does it work?)
-1. Seriously, log into the App Store before you run this. You have been warned.
-
-To install with a one-liner, run this:
-
-```sh
-curl --remote-name https://raw.githubusercontent.com/khaosx/mast/master/post_install.sh && sh post_install.sh 2>&1 | tee ~/install.log
-```
+1. Install macOS, keeping your install as close to vanilla as possible. Remember, you want to manage your config via Ansible, and waste as little time as possible doing manual configurations.
+1. Modify the Seriously, log into the App Store before you run this. You have been warned.
+1. In the file `post_install.sh`, modify the three lines for environment variables
+    * `export BOOTSTRAP_REPO_URL...`
+    * `export DEFAULT_COMPUTER_NAME...`
+    * `export DEFAULT_TIME_ZONE=...` - Find your TZ with `sudo systemsetup -listtimezones\`
+1. To install with a one-liner, run `sh curl --remote-name https://raw.githubusercontent.com/khaosx/mast/master/post_install.sh && sh post_install.sh 2>&1 | tee ~/install.log`
 
 ## What does it do?
 
@@ -29,7 +29,7 @@ It pulls down a script that installs a bunch of stuff using brew and mas, and th
 There's a few things to do once the install is complete. I'll document them one of these days.
 
 ## To-Do
-[Current list of to-do's](todo.md)
+- [ ] Finish writing this thing!
 
 ## Resources and Inspiration
 * https://github.com/joshukraine/mac-bootstrap
