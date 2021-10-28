@@ -5,7 +5,7 @@
     - vars.yml
 
   tasks:
-    - import_tasks: tasks/sudoers.yml
+    - import_tasks: tasks/modify_sudoers.yml
       when: allow_admin_nopasswd_sudo
 
     - import_tasks: tasks/configure_dotfiles.yml
