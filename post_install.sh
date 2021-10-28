@@ -101,10 +101,10 @@ fi
 
 printf "Setting up HomeBrew environment\\n"
 # Adds homebrew environment to $path via ~/.zprofile
-if [[ $APPLE_SILICON = "true" ]] ; then
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+# if [[ $APPLE_SILICON = "true" ]] ; then
+#   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+#   eval "$(/opt/homebrew/bin/brew shellenv)"
+# fi
 brew analytics off
 brew doctor
 
