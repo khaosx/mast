@@ -1,10 +1,18 @@
 ---
 - hosts: all
+  become: true
 
   vars_files:
     - vars.yml
 
   tasks:
+
+    - name: "Create development environment"
+      ansible.builtin.file:
+        path: ~/development/{{ item}}
+        state: directory
+      with_items: "{{ dev_env_needs }}"
+    
     - import_tasks: tasks/modify_sudoers.yml
       when: allow_admin_nopasswd_sudo
 
