@@ -1,0 +1,14 @@
+---
+
+- name: Clone dotfiles repo from Git
+  ansible.builtin.git:
+    repo: "{{  dotfiles_repo }}"
+    dest: "{{  dotfiles_destination }}"
+
+- name: "Set symlink for each dotfile"
+  file:
+    src: "{{  dotfiles_destination }}/{{ item }}"
+    path: '~/.{{ item }}'
+    state: link
+  with_items:
+    - "{{ dotfiles_to_link }}"

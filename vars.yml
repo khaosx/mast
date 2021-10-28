@@ -1,8 +1,20 @@
 ---
 
-# System Config
+# sudo configuration
 allow_admin_nopasswd_sudo: true
+
+# Dotfiles configuration
 dotfiles_repo: https://github.com/khaosx/dotfiles.git
+dotfiles_destination: ~/development/github/dotfiles
+configure_dotfiles_from_repo: true
+dotfiles_to_link:
+  - ansible.cfg
+  - ansible_inventory
+  - gitconfig
+  - gitignore
+  - gitmessage
+  - zprofile
+  
 
 systemsetup_setremotelogin: on
 systemsetup_settimezone: "America/New_York"
@@ -48,6 +60,7 @@ homebrew_cask_packages:
   - java
   - launchcontrol
   - musicbrainz-picard
+  - microsoft-edge
   - neofinder
   - plex
   - powershell
