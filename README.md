@@ -35,7 +35,8 @@ From `post_install.sh`:
 - [X] Install Python3 / pip3
 - [X] Install Ansible
 - [X] Clone this repository to local
-From Ansible
+
+From `Ansible`
 - [ ] Setup password-less sudo for admin group 
 - [ ] Clone my dotfiles repo and symlink all files
 - [ ] Apply defaults in macOS
