@@ -14,7 +14,6 @@ dotfiles_to_link:
   - gitignore
   - gitmessage
   - zprofile
-  
 
 systemsetup_setremotelogin: on
 systemsetup_settimezone: "America/New_York"
@@ -26,8 +25,8 @@ systemsetup_setharddisksleep: 60 # minutes - 0 is off
 systemsetup_setrestartpowerfailure: on
 systemsetup_setrestartfreeze: on
 systemsetup_setallowpowerbuttontosleepcomputer: on
-systemsetup_setcomputername: {{ ansible_hostname|capitalize }}
-systemsetup_setlocalsubnetname: {{ ansible_hostname|lower }}
+systemsetup_setcomputername: "{{ ansible_hostname|capitalize }}"
+systemsetup_setlocalsubnetname: "{{ ansible_hostname|lower }}"
 systemsetup_getwaitforstartupafterpowerfailure: 30 # seconds
 systemsetup_setwaitforstartupafterpowerfailure : 30 # value must be a multiple of 30 seconds.
 
