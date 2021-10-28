@@ -6,7 +6,7 @@ My usage of this script assumes that I'll be running this as a standalone instal
 
 Tested on macOS Big Sur (11.6) and Monterey (12.1)
 
-## Prerequisites
+## Requirements
 
 * A Mac (either Intel- or Apple M1-based)
 * macOS Big Sur (11.6) or higher, freshly installed.
@@ -17,19 +17,34 @@ Tested on macOS Big Sur (11.6) and Monterey (12.1)
 1. In the file `post_install.sh`, modify the three lines for environment variables
     * `export BOOTSTRAP_REPO_URL...`
     * `export DEFAULT_COMPUTER_NAME...`
-    * `export DEFAULT_TIME_ZONE=...` - Find your TZ with `sudo systemsetup -listtimezones\`
+    * `export DEFAULT_TIME_ZONE=...` (Find your TZ with `sudo systemsetup -listtimezones\`)
 1. To install with a one-liner, run ```curl --remote-name https://raw.githubusercontent.com/khaosx/mast/master/post_install.sh && sh post_install.sh 2>&1 | tee ~/install.log```
 
 ## What does it do?
 
-It pulls down a script that installs a bunch of stuff using brew and mas, and then sets up the machine to my liking.
+Work in progress. See the To-Do section for currently complete functionality
 
 ## Post-install Tasks
 
 There's a few things to do once the install is complete. I'll document them one of these days.
 
 ## To-Do
-- [ ] Finish writing this thing!
+From `post_install.sh`:
+- [X] Initialize system / set time zone / hostname
+- [X] Install HomeBrew
+- [X] Install Python3 / pip3
+- [X] Install Ansible
+- [X] Clone this repository to local
+From Ansible
+- [ ] Setup password-less sudo for admin group 
+- [ ] Clone my dotfiles repo and symlink all files
+- [ ] Apply defaults in macOS
+- [ ] Configure terminal preferences
+- [ ] Install all remaining brew packages
+- [ ] Install all specified brew casks
+- [ ] Install all specified applications from Mac App Store (mas)
+- [ ] Customize the dock
+- [ ] Leave no trace, except for a log file
 
 ## Resources and Inspiration
 * https://github.com/joshukraine/mac-bootstrap
