@@ -18,13 +18,16 @@ fi
 sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Let's set up some environmental variables
-export BOOTSTRAP_REPO_URL="https://github.com/khaosx/mast.git"
-export BOOTSTRAP_DIR=$HOME/macos-setup
-export DEFAULT_COMPUTER_NAME="Silicon"
-export DEFAULT_TIME_ZONE="America/New_York" 
+# Let's set up some environmental variables - you should modify these!
+export BOOTSTRAP_REPO_URL="https://github.com/khaosx/mast.git"     # The repo you're using
+export DEFAULT_COMPUTER_NAME="Silicon"                                           # The hostname for your "default" system
+export DEFAULT_TIME_ZONE="America/New_York"                                   # Your timezone
+# Don't modify past here unless you know what you're doing
 
 # Let's get started
+export BOOTSTRAP_DIR=$HOME/mast-files
+export HOMEBREW_INSTALLED="false"
+
 clear
 printf "*************************************************************************\\n"
 printf "*******                                                           *******\\n"
@@ -34,9 +37,7 @@ printf "************************************************************************
 
 printf "Checking for homebrew installation...\\n"
 which -s brew  >/dev/null 2>&1
-if [[ $? != 0 ]] ; then
-    export HOMEBREW_INSTALLED="false"
-else
+if [[ $? = 0 ]] ; then
     export HOMEBREW_INSTALLED="true"
 fi
 
