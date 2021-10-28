@@ -18,7 +18,9 @@ Tested on macOS Big Sur (11.6) and Monterey (12.1)
     * `export BOOTSTRAP_REPO_URL...`
     * `export DEFAULT_COMPUTER_NAME...`
     * `export DEFAULT_TIME_ZONE=...` (Find your TZ with `sudo systemsetup -listtimezones\`)
-1. To begin, run ```curl --remote-name https://raw.githubusercontent.com/khaosx/mast/master/post_install.sh && sh post_install.sh 2>&1 | tee ~/install.log```
+1. To begin, run 
+
+```curl --remote-name https://raw.githubusercontent.com/khaosx/mast/master/post_install.sh && sh post_install.sh 2>&1 | tee ~/install.log```
 
 ## What does it do?
 
