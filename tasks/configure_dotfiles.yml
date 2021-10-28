@@ -5,8 +5,13 @@
     repo: "{{  dotfiles_repo }}"
     dest: "{{  dotfiles_destination }}"
 
+- name: "Remove existing .zprofile"
+  ansible.builtin.file:
+    path: ~/.zprofile
+    state: absent
+
 - name: "Set symlink for each dotfile"
-  file:
+  ansible.builtin.file:
     src: "{{  dotfiles_destination }}/{{ item }}"
     path: '~/.{{ item }}'
     state: link
