@@ -117,74 +117,9 @@ pip3 install ansible
 printf "Cloning github repo\\n"
 git clone "$BOOTSTRAP_REPO_URL" "$BOOTSTRAP_DIR"
 
-# printf "Loading functions\\n"
-# source "$BOOTSTRAP_DIR/bin/functions"
-# 
-# printf "Applying macOS defaults\\n"
-# source "$BOOTSTRAP_DIR/bin/apply_macos_defaults"
-# 
-# printf "Installing taps, formulas, casks, and MAS apps\\n"
-# export BOOTSTRAP_CUSTOM=$BOOTSTRAP_DIR/lib/systems/$HOST_NAME
-# if [ -f "$BOOTSTRAP_CUSTOM/brewfile" ]; then
-#    cp "$BOOTSTRAP_CUSTOM/brewfile" $HOME/.Brewfile
-#    brew bundle --global
-#    printf "Running bundle install again to verify\\n"
-#    brew bundle --global
-# fi
-# 
-# # Copy over stubborn apps
-# mkdir $HOME/temp_software
-# mount_smbfs -N //guest@carbon/Software $HOME/temp_software
-# pip3 install slack-cleaner
-# 
-# if [ "$(ls $HOME/temp_software/OSX/Apps/all)" ]; then
-#    cp -R $HOME/temp_software/OSX/Apps/all/* ~/Desktop
-# fi
-# 
-# if [ "$(ls $HOME/temp_software/OSX/Apps/$HOST_NAME)" ]; then
-#    cp -R $HOME/temp_software/OSX/Apps/$HOST_NAME/* ~/Desktop
-# fi
-# 
-# if [ "$(ls $HOME/Desktop/*.app)" ]; then
-#    mv $HOME/Desktop/*.app /Applications
-# fi
-# 
-# if $(which slack >/dev/null); then
-#     source "$HOME/Desktop/slack_init.sh"
-#     rm "$HOME/Desktop/slack_init.sh"
-# fi
-# 
-# umount $HOME/temp_software
-# rm -rf $HOME/temp_software
-# 
-# if [ -f "$BOOTSTRAP_CUSTOM/custom_setup" ]; then
-#    printf "Applying per-system customizations\\n"
-#    source "$BOOTSTRAP_CUSTOM/custom_setup"
-# fi
-# 
-# printf "Installing launchctl jobs\\n"
-# 
-# mkdir -p "$HOME/Library/LaunchAgents"
-# if [ -f "$BOOTSTRAP_CUSTOM/com.khaosx.dailywork.plist" ]; then
-# 	mv "$BOOTSTRAP_CUSTOM/com.khaosx.dailywork.plist" "$HOME/Library/LaunchAgents/com.khaosx.dailywork.plist"
-# 	printf "Found system specific daily work job - configuring.\\n"
-# else
-# 	mv "$BOOTSTRAP_DIR/lib/plists/com.khaosx.dailywork_generic.plist" "$HOME/Library/LaunchAgents/com.khaosx.dailywork.plist"
-# 	printf "No system specific daily work job found - configuring generic daemon.\\n"
-# fi
-# launchctl load ~/Library/LaunchAgents/com.khaosx.dailywork.plist
-# 
-# if [ -f "$BOOTSTRAP_CUSTOM/dock" ]; then
-#    printf "Applying dock customizations\\n"
-#    source "$BOOTSTRAP_CUSTOM/dock"
-# fi
-# 
-# printf "Installing dotfiles\\n"
-# git clone "https://github.com/khaosx/dotfiles.git" "dotfiles"
-# source "$BOOTSTRAP_DIR/bin/install_dotfiles"
-# 
-printf "Step 7: Cleaning up...\\n"
-#rm -rf "$BOOTSTRAP_DIR"
+printf "Running Ansible playbook\\n"
+cd "$BOOTSTRAP_DIR"
+ansible-playbook -i inventory main.yml
 
 printf  "**********************************************************************\\n"
 printf  "**********************************************************************\\n"
@@ -194,3 +129,4 @@ printf  "****                Please restart your computer.                 ****\
 printf  "****                                                              ****\\n"
 printf  "**********************************************************************\\n"
 printf  "**********************************************************************\\n"
+exit 0

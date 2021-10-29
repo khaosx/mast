@@ -24,23 +24,16 @@ Tested on macOS Big Sur (11.6) and Monterey (12.1)
 
 ## What does it do?
 
-Work in progress. See the To-Do section for currently complete functionality
-
-## Post-install Tasks
-
-There's a few things to do once the install is complete. I'll document them one of these days.
+1. Initialize system / set time zone / hostname
+1. Install HomeBrew
+1. Install Python3 / pip3
+1. Install Ansible
+1. Clone this repository to local
+1. Setup password-less sudo for admin group 
+1. Clone my dotfiles repo and symlink all files
 
 ## To-Do
-From `post_install.sh`:
-- [X] Initialize system / set time zone / hostname
-- [X] Install HomeBrew
-- [X] Install Python3 / pip3
-- [X] Install Ansible
-- [X] Clone this repository to local
 
-From `Ansible`
-- [ ] Setup password-less sudo for admin group 
-- [ ] Clone my dotfiles repo and symlink all files
 - [ ] Apply defaults in macOS
 - [ ] Configure terminal preferences
 - [ ] Install all remaining brew packages
