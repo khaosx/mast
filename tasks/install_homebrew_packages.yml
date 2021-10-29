@@ -1,0 +1,8 @@
+---
+
+# Update homebrew and install all packages
+- community.general.homebrew:
+    name: "{{ item }}"
+    state: present
+    update_homebrew: yes
+  with_items: "{{ homebrew_packages }}"
