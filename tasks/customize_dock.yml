@@ -1,0 +1,21 @@
+---
+
+- name: Ensure dockutil is installed
+  community.general.homebrew:
+    name: dockutil
+    state: present
+
+- name: Remove unwanted dock items
+  ansible.builtin.include_tasks: dock_remove_items.yml
+  loop: "{{ dock_items_remove }}"
+
+- name: Verify required dock items and add if needed
+  ansible.builtin.include_tasks: dock_add_items.yml
+  loop: "{{ dock_items_add }}"
+
+- name: Ensure dock items are in correct position.
+  ansible.builtin.include_tasks: dock_check_placement.yml
+  when:
+    - item.pos is defined
+    - item.pos > 0
+  loop: "{{ dock_items_add }}"

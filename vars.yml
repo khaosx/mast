@@ -10,7 +10,7 @@ dev_env_needs:
 # Dotfiles configuration
 dotfiles_repo: https://github.com/khaosx/dotfiles.git
 dotfiles_destination: ~/development/github/dotfiles
-configure_dotfiles_from_repo: true
+configure_dotfiles_from_repo: false
 dotfiles_to_link:
   - ansible.cfg
   - ansible_inventory
@@ -98,4 +98,37 @@ mas_installed_apps:
   - { id: 409203825, name: "Numbers" }
   - { id: 409183694, name: "Keynote" }
   - { id: 413969927, name: "AudioBookBinder" }
+
+customize_dock: true
+dock_items_remove:
+  - Launchpad
+  - TV
+  
+dock_items_add:
+  - { name: "Safari", position: 1, path: "/Applications/Safari.app" }
+  - { name: "Microsoft Edge", position: 2, path: "/Applications/Microsoft Edge.app" }
+  - { name: "Mail", position: 3, path: "/System/Applications/Mail.app" }
+  - { name: "Messages", position: 4, path: "/System/Applications/Messages.app" }
+  - { name: "Calendar", position: 5, path: "/System/Applications/Calendar.app" }
+  - { name: "Contacts", position: 6, path: "/System/Applications/Contacts.app" }
+  - { name: "Notes", position: 7, path: "/System/Applications/Notes.app" }
+  - { name: "Reminders", position: 8, path: "/System/Applications/Reminders.app" }
+  - { name: "Slack", position: 9, path: "/Applications/Slack.app" }
+  - { name: "Music", position: 10, path: "/System/Applications/Music.app" }
+  - { name: "Photos", position: 11, path: "/System/Applications/Photos.app" }
+  - { name: "BBEdit", position: 12, path: "/Applications/BBEdit.app" }
+  - { name: "Transmit", position: 13, path: "/Applications/Transmit.app" }
+  - { name: "Reeder", position: 14, path: "/Applications/Reeder.app" }
+  - { name: "News", position: 15, path: "/System/Applications/News.app" }
+  - { name: "NeoFinder", position: 16, path: "/Applications/NeoFinder.app" }
+  - { name: "Numbers", position: 17, path: "/Applications/Numbers.app" }
+  - { name: "Pages", position: 18, path: "/Applications/Pages.app" }
+  - { name: "Paprika Recipe Manager 3", position: 19, path: "/Applications/Paprika Recipe Manager 3.app" }
+  - { name: "Microsoft Remote Desktop", position: 20, path: "/Applications/Microsoft Remote Desktop.app" }
+  - { name: "Maps", position: 21, path: "/System/Applications/Maps.app" }
+  - { name: "Plex", position: 22, path: "/Applications/Plex.app" }
+  - { name: "Terminal", position: 23, path: "/System/Applications/Utilities/Terminal.app" }
+  - { name: "App Store", position: 24, path: "/System/Applications/App Store.app" }
+  - { name: "Home", position: 25, path: "/Applications/Home.app" }
+  - { name: "System Preferences", position: 26, path: "/System/Applications/System Preferences.app" }
 

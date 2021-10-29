@@ -47,7 +47,8 @@ Tested on macOS Big Sur (11.6) and Monterey (12.1)
 * https://github.com/geerlingguy/mac-dev-playbook
 * https://www.freecodecamp.org/news/install-xcode-command-line-tools/
 * System setup commands - https://support.apple.com/guide/remote-desktop/about-systemsetup-apd95406b8d/mac
+* Dock code is Copyright &copy; 2021 by [Jeff Geerling](https://github.com/geerlingguy/ansible-collection-mac/tree/master/roles/dock)
 
 ## License
 
-Copyright &copy; 2021 Kristopher Newman. [MIT License](https://github.com//khaosx/mast/blob/master/LICENSE.md)
+Unless otherwise noted, all content is Copyright &copy; 2021 Kristopher Newman. [MIT License](https://github.com//khaosx/mast/blob/master/LICENSE.md)
