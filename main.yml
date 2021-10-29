@@ -15,9 +15,20 @@
     - import_tasks: tasks/modify_sudoers.yml
       when: allow_admin_nopasswd_sudo
       become: true
+      tags: sudo
 
     - import_tasks: tasks/configure_dotfiles.yml
       when: configure_dotfiles_from_repo
+      tags: dotfiles
 
     - import_tasks: tasks/install_homebrew_packages.yml
       when: install_homebrew_packages
+      tags: homebrew_packages
+
+    - import_tasks: tasks/install_homebrew_casks.yml
+      when: install_homebrew_casks
+      tags: homebrew_casks
+
+    - import_tasks: tasks/install_mas_apps.yml
+      when: install_mas_apps
+      tags: mas_apps

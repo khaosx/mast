@@ -39,7 +39,6 @@ homebrew_packages:
   - ansible-lint
   - dockutil
   - ffmpeg
-  - flac
   - git
   - jq
   - lame
@@ -47,7 +46,6 @@ homebrew_packages:
   - mkvtoolnix
   - mpv
   - wget
-  - youtube-dl
 
 install_homebrew_casks: true
 homebrew_cask_packages:
@@ -73,7 +71,7 @@ homebrew_cask_packages:
   - virtualbox
   - vlc
 
-install_mas_apps: true
+install_mas_apps: false
 mas_installed_apps:
   - { id: 904280696, name: "Things" }
   - { id: 1333542190, name: "1Password 7" }

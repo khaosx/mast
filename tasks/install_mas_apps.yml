@@ -1,0 +1,17 @@
+---
+
+- name: Ensure MAS is installed.
+  community.general.homebrew:
+    name: mas
+    state: present
+
+- name: Verify MAS account is signed in
+  ansible.builtin.command: mas account
+  register: mas_account_result
+  failed_when: mas_account_result.rc > 1
+  check_mode: false
+  changed_when: false
+
+- name: Install requested mas apps are installed.
+  ansible.builtin.command: mas install "{{ item.id }}"
+  with_items: "{{ mas_installed_apps }}"
