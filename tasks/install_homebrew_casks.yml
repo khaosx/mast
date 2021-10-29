@@ -4,9 +4,25 @@
   community.general.homebrew:
     update_homebrew: yes
 
-- name: Install requested casks
-  community.general.homebrew:
+- name: Install requested common casks
+  community.general.homebrew_cask:
     name: "{{ item }}"
     state: present
     update_homebrew: yes
-  with_items: "{{ homebrew_cask_packages }}"
+  with_items: "{{ homebrew_cask_packages_common }}"
+
+- name: Install requested casks for M1
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+    state: present
+    update_homebrew: yes
+  with_items: "{{ homebrew_cask_packages_m1 }}"
+  when: "'Apple M' in ansible_processor"
+
+- name: Install requested casks for Intel Macs
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+    state: present
+    update_homebrew: yes
+  with_items: "{{ homebrew_cask_packages_intel }}"
+  when: "'Intel' in ansible_processor"

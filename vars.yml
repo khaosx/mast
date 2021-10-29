@@ -46,9 +46,10 @@ homebrew_packages:
   - mkvtoolnix
   - mpv
   - wget
+  - java
 
 install_homebrew_casks: true
-homebrew_cask_packages:
+homebrew_cask_packages_common:
   - appzapper
   - balenaetcher
   - bbedit
@@ -58,7 +59,6 @@ homebrew_cask_packages:
   - dropbox
   - filebot
   - hazel
-  - java
   - launchcontrol
   - musicbrainz-picard
   - microsoft-edge
@@ -68,8 +68,12 @@ homebrew_cask_packages:
   - slack
   - subtools
   - transmit
-  - virtualbox
   - vlc
+
+homebrew_cask_packages_m1:
+
+homebrew_cask_packages_intel:
+  - virtualbox
 
 install_mas_apps: false
 mas_installed_apps:

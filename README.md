@@ -13,7 +13,7 @@ Tested on macOS Big Sur (11.6) and Monterey (12.1)
 
 ## Installation (How does it, um, how does it work?)
 1. Install macOS, keeping your install as close to vanilla as possible. Remember, you want to manage your config via Ansible, and waste as little time as possible doing manual configurations.
-1. Log into the App Store before you run this, if you set `install_mas_apps` to TRUE.
+1. Log into the App Store before you run this, if you set `install_mas_apps` to TRUE. ( [On hold, see this issue](https://github.com/mas-cli/mas/issues/164#))
 1. In the file `post_install.sh`, modify the three lines for environment variables
     * `export BOOTSTRAP_REPO_URL...`
     * `export DEFAULT_COMPUTER_NAME...`
@@ -31,14 +31,14 @@ Tested on macOS Big Sur (11.6) and Monterey (12.1)
 1. Clone this repository to local
 1. Setup password-less sudo for admin group 
 1. Clone my dotfiles repo and symlink all files
+1. Install all remaining brew packages
+1. Install all specified brew casks, with custom casks by architecture
 
 ## To-Do
 
 - [ ] Apply defaults in macOS
 - [ ] Configure terminal preferences
-- [ ] Install all remaining brew packages
-- [ ] Install all specified brew casks
-- [ ] Install all specified applications from Mac App Store (mas)
+- [ ] Install all specified applications from Mac App Store (mas) ( [On hold, see this issue](https://github.com/mas-cli/mas/issues/164#))
 - [ ] Customize the dock
 - [ ] Leave no trace, except for a log file
 
