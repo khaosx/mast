@@ -17,7 +17,9 @@
     state: present
     update_homebrew: yes
   with_items: "{{ homebrew_cask_packages_m1 }}"
-  when: "'Apple M' in ansible_processor"
+  when: 
+    - "'Apple M' in ansible_processor"
+    - homebrew_cask_packages_m1
 
 - name: Install requested casks for Intel Macs
   community.general.homebrew_cask:
